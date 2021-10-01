@@ -1,12 +1,22 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <button @click="sayHi">sayHi</button>
+    <router-view></router-view>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+@Component
+export default class App extends Vue {
+  message = "hello";
+
+  sayHi(): void {
+    console.log(this.message);
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
